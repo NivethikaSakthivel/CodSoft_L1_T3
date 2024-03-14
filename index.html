@@ -53,6 +53,20 @@
 	function del(){
 		outputScreen.value = outputScreen.value.slice(0,-1)
 	}
+	function percentage() {
+            let value = outputScreen.value;
+            if (value.includes('%')) {
+                let parts = value.split('%');
+                if (parts.length === 2) {
+                    let result = parseFloat(parts[0]) / 100 * parseFloat(parts[1]);
+                    outputScreen.value = result;
+                } else {
+                    alert("Invalid");
+                }
+            } else {
+                alert("Invalid");
+            }
+        }
 	</script>
 </body>
 </html>
